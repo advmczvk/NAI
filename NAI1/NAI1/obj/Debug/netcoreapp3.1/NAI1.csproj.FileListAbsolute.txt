@@ -1,0 +1,11 @@
+D:\Users\siemn\Documents\PJATK\NAI\NAI1\NAI1\bin\Debug\netcoreapp3.1\NAI1.exe
+D:\Users\siemn\Documents\PJATK\NAI\NAI1\NAI1\bin\Debug\netcoreapp3.1\NAI1.deps.json
+D:\Users\siemn\Documents\PJATK\NAI\NAI1\NAI1\bin\Debug\netcoreapp3.1\NAI1.runtimeconfig.json
+D:\Users\siemn\Documents\PJATK\NAI\NAI1\NAI1\bin\Debug\netcoreapp3.1\NAI1.runtimeconfig.dev.json
+D:\Users\siemn\Documents\PJATK\NAI\NAI1\NAI1\bin\Debug\netcoreapp3.1\NAI1.dll
+D:\Users\siemn\Documents\PJATK\NAI\NAI1\NAI1\bin\Debug\netcoreapp3.1\NAI1.pdb
+D:\Users\siemn\Documents\PJATK\NAI\NAI1\NAI1\obj\Debug\netcoreapp3.1\NAI1.csprojAssemblyReference.cache
+D:\Users\siemn\Documents\PJATK\NAI\NAI1\NAI1\obj\Debug\netcoreapp3.1\NAI1.AssemblyInfoInputs.cache
+D:\Users\siemn\Documents\PJATK\NAI\NAI1\NAI1\obj\Debug\netcoreapp3.1\NAI1.AssemblyInfo.cs
+D:\Users\siemn\Documents\PJATK\NAI\NAI1\NAI1\obj\Debug\netcoreapp3.1\NAI1.dll
+D:\Users\siemn\Documents\PJATK\NAI\NAI1\NAI1\obj\Debug\netcoreapp3.1\NAI1.pdb
