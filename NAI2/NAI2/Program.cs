@@ -11,16 +11,16 @@ namespace NAI2
             string[] trainingContent = File.ReadAllLines("iris_training.txt");
             string[] testContent = File.ReadAllLines("iris_test.txt");
 
-            var training = new List<Point>();
-            var test = new List<Point>();
+            var training = new List<Neigbhour>();
+            var test = new List<Neigbhour>();
 
             for (int i = 0; i < trainingContent.Length; i++)
             {
-                training.Add(new Point(trainingContent[i], true));
+                training.Add(new Neigbhour(trainingContent[i], true));
             }
             for (int i = 0; i < testContent.Length; i++)
             {
-                test.Add(new Point(testContent[i], true));
+                test.Add(new Neigbhour(testContent[i], true));
             }
 
             var perceptron = new Perceptron(training[0].points.Count);
@@ -36,7 +36,7 @@ namespace NAI2
                 Console.WriteLine("Podaj dane: ");
                 string input = Console.ReadLine();
                 
-                var p = new Point(input, false);
+                var p = new Neigbhour(input, false);
 
                 string pickedType = perceptron.Sum(p) == 1 ? "Iris-setosa" : "nie Iris-setosa";
 
@@ -48,12 +48,12 @@ namespace NAI2
             }
         }
     }
-    class Point
+    class Neigbhour
     {
         public string type { get; }
         public List<double> points { get; }
 
-        public Point(string line, bool withType)
+        public Neigbhour(string line, bool withType)
         {
             points = new List<double>();
             string[] data = line.Split(new char[] {' ', '\t'}, StringSplitOptions.RemoveEmptyEntries);
@@ -89,7 +89,7 @@ namespace NAI2
                 weights.Add(new Random().NextDouble());
             }
         }
-        public void StartLearning(List<Point> points, int accuracy)
+        public void StartLearning(List<Neigbhour> points, int accuracy)
         {
             for(int i = 0; i < accuracy; i++)
             {
@@ -98,8 +98,9 @@ namespace NAI2
                     Delta(points[j]);
                 }
             }
+            foreach (double w in weights) Console.WriteLine($"{w}");
         }
-        public void Delta(Point point)
+        public void Delta(Neigbhour point)
         {
             double sum = Sum(point);
             if(point.type == "Iris-setosa")
@@ -128,7 +129,7 @@ namespace NAI2
                 }
             }
         }
-        public double Sum(Point point)
+        public double Sum(Neigbhour point)
         {
             double sum = 0;
             for(int i = 0; i < point.points.Count; i++)
@@ -137,13 +138,13 @@ namespace NAI2
             }
             return sum >= thetha ? 1 : 0;
         }
-        public void RunTest(List<Point> test)
+        public void RunTest(List<Neigbhour> test)
         {
             int correct = 0;
-            var points = new List<Tuple<string, Point>>();
-            foreach(Point p in test)
+            var points = new List<Tuple<string, Neigbhour>>();
+            foreach(Neigbhour p in test)
             {
-                points.Add(new Tuple<string, Point>(Sum(p) == 1 ? "Iris-setosa" : "inny", p));
+                points.Add(new Tuple<string, Neigbhour>(Sum(p) == 1 ? "Iris-setosa" : "inny", p));
             }
             for(int i = 0; i < test.Count; i++)
             {
